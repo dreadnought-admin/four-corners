@@ -31,7 +31,7 @@ export default function MainContainer() {
                     } else if (rn === mainName) {
                         iconName = focused ? 'star' : 'star';
                     } else if (rn === aboutName) {
-                        iconName = focused ? 'smile-circle' : 'smile-circle';
+                        iconName = focused ? 'dashboard' : 'dashboard';
                     } else if (rn === countryName) {
                         iconName = focused ? 'globe' : 'globe';
                     }

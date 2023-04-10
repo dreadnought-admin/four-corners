@@ -73,7 +73,7 @@ const CountryList = ({ navigation }) => {
     return (
       <View>
       <View style={styles.browseCountries}>
-        <Text style={styles.headerText}>Where Will You Go?</Text>
+        <Text style={styles.headerText}>Where Will You Go? 🗺️</Text>
       </View>
       <TextInput
         style={styles.input}
