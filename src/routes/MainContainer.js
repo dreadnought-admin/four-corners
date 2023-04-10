@@ -2,7 +2,7 @@
 import * as React from "react"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import Main from "../components/Main";
 import About from "../components/About";
 import CountryList from '../components/CountryList';
@@ -27,16 +27,16 @@ export default function MainContainer() {
                     let rn = route.name
 
                     if (rn === welcomeName) {
-                        iconName = focused ? 'home' : 'home-outline';
+                        iconName = focused ? 'cloud' : 'cloudo';
                     } else if (rn === mainName) {
-                        iconName = focused ? 'home' : 'home-outline';
+                        iconName = focused ? 'lock1' : 'unlock';
                     } else if (rn === aboutName) {
-                        iconName = focused ? 'settings' : 'settings-outline';
+                        iconName = focused ? 'play' : 'playcircleo';
                     } else if (rn === countryName) {
-                        iconName = focused ? 'home' : 'home-outline';
+                        iconName = focused ? 'environment' : 'enviromento';
                     }
 
-                    return <Ionicons name={iconName} size={size} color={color}/>
+                    return <Icon name={iconName} size={size} color={color}/>
                 }
             })}>
 
