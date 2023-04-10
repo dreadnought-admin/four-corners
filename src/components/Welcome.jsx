@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import { View, Text, Image, Button, StyleSheet, Alert, Linking, TouchableOpacity, ImageBackground, Animated, Easing } from 'react-native';
+import { View, Text, Image, StyleSheet, Linking, TouchableOpacity, ImageBackground, Animated, Easing } from 'react-native';
 import Main from './Main';
 import tripadvisor from '../assets/tripadvisor.png'
 import background from '../assets/cartoonbg.jpg'

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { StyleSheet, View, Text, Button, Image, ScrollView } from 'react-native'
+import { StyleSheet, View, Text, Image, ScrollView } from 'react-native'
 import { DataContext } from '../global/DataContext';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import Banner from './Banner';

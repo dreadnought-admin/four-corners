@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
-import Search from '../navigation/Search'
+import React, { useState, useContext } from 'react'
 import { View, Text, Button, FlatList, StyleSheet, Image, TextInput } from 'react-native'
 import { DataContext } from '../global/DataContext';
 
