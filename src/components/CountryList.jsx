@@ -1,15 +1,23 @@
 import React, { useState, useContext } from 'react'
-import { View, Text, Button, FlatList, StyleSheet, Image, TextInput } from 'react-native'
+import { View, Text, Button, FlatList, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native'
 import { DataContext } from '../global/DataContext';
+import Collapsible from 'react-native-collapsible';
 
 
 const CountryList = ({ navigation }) => {
 
   const [search, setSearch] = useState("")
+  const [collapsed, setCollapsed] = useState(true);
 
-    const {appData, setData, loading, setLoading, 
-        beenHere, setBeenHere, wantToGo, 
-        setWantToGo, filteredData, setFilteredData} = useContext(DataContext);
+  const toggleExpanded = () => {
+    //Toggling the state of single Collapsible
+    setCollapsed(!collapsed);
+  };
+
+    const {appData, setData, liked, setLiked, wantToGo, beenHere, setWantToGo, setBeenHere,
+      filteredData, setFilteredData} = useContext(DataContext);
+
+
 
     const myItemSeparator = () => {
         return (
@@ -39,6 +47,7 @@ const CountryList = ({ navigation }) => {
 
     const handleWantToGo = () => setWantToGo(wantToGo + 1)
 
+
       const ItemView = ({item}) => {
         return(
         <View style={styles.countryContainer}>
@@ -61,9 +70,12 @@ const CountryList = ({ navigation }) => {
             Population: {item.population}
           </Text>
           <View style={styles.btn}>
-            <Button color="lightgreen" title="See it on TripAdvisor 🦉"></Button>
+            {/* <Button color="lightgreen" title="Maps" onPress={() => {<Map item={item}/>}}></Button> */}
+            <Button color="lightgreen" title={`${wantToGo} want to go`} onPress={handleWantToGo}></Button>
           </View>
-          
+          <View style={styles.btn}>
+            <Button color="lightgreen" title={`${beenHere} have been!`} onPress={handleBeenHere}></Button>
+          </View>
         </View>
         
         )
@@ -106,6 +118,10 @@ const CountryList = ({ navigation }) => {
       marginBottom: 15,
       alignItems: 'center',
       marginTop: 15,
+    },
+    content: {
+      padding: 20,
+      backgroundColor: '#fff',
     },
     headerText: {
       fontFamily: 'Helvetica',

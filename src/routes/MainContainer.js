@@ -7,12 +7,14 @@ import Main from "../components/Main";
 import About from "../components/About";
 import Countries from '../components/CountryList';
 import Welcome from '../components/Welcome';
+import Map from "../components/Map";
 
 // screen names 
-const welcomeName = "Welcome"
+const welcomeName = "Welcome";
 const mainName = "Main";
 const aboutName = "About";
-const countryName = "Countries"
+const countryName = "Countries";
+const map = "Map";
 
 const Tab = createBottomTabNavigator();
 

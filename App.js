@@ -3,7 +3,9 @@ import 'react-native-gesture-handler';
 import MainContainer from './src/routes/MainContainer'
 import { DataProvider } from './src/global/DataContext';
 
+import {enableLatestRenderer} from 'react-native-maps';
 
+enableLatestRenderer();
 
 function App() {
   return (

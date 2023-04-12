@@ -14,7 +14,6 @@ const pressHandler = () => {
     alert("Clicked")
 }
 
-console.log(appData[0].name)
 
   return (
     <ScrollView>

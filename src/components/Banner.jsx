@@ -6,7 +6,6 @@ const Banner = () => {
 
   const {user, setUser} = useContext(DataContext);
 
-  console.log({user})
 
   return (
     <View style={styles.container}>

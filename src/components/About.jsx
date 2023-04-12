@@ -4,6 +4,8 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import globe from '../assets/removedglobe.png'
 import plane from '../assets/planegif.gif'
 
+import Map from './Map';
+
 
 const About = () => {
 
@@ -46,6 +48,9 @@ const About = () => {
               Whether you're looking to scale white sands or black cliffsides, Four Corners can take you there—
               long before the boarding call.
             </Text>
+          </View>
+          <View>
+            {/* <Map /> */}
           </View>
         </View>
         </ImageBackground>

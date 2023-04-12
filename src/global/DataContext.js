@@ -11,9 +11,10 @@ const DataProvider = ({children}) => {
     const [beenHere, setBeenHere] = useState(0);
     const [wantToGo, setWantToGo] = useState(0);
 
+    const [liked, setLiked] = useState([]);
+
     const [user, setUser] = useState([])
 
-    const [search, searchQuery] = useState('');
 
     const url = 'https://restcountries.com/v3.1/all';
 
@@ -49,7 +50,7 @@ const DataProvider = ({children}) => {
             appData, setData, loading, 
             setLoading, beenHere, setBeenHere, 
             wantToGo, setWantToGo, user, setUser,
-            filteredData, setFilteredData
+            filteredData, setFilteredData, liked, setLiked
         }}>
             {children}
         </DataContext.Provider>
