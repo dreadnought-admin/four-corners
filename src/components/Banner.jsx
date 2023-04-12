@@ -12,7 +12,7 @@ const Banner = () => {
         <View style={styles.welcomeback}>
           <Text>Welcome back, traveler!</Text>
         </View>
-        <Image style={styles.img} source={{uri: "https://randomuser.me/api/portraits/men/1.jpg"}}/>
+        <Image style={styles.img} source={{uri: "https://randomuser.me/api/portraits/men/20.jpg"}}/>
     </View>
   )
 }

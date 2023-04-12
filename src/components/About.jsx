@@ -31,11 +31,11 @@ const About = () => {
             </Text>
 
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <View style={{flex: 1, height: 1, backgroundColor: '#90EE90'}} />
+              <View style={{flex: 1, height: 1, backgroundColor: 'white'}} />
               <View>
-                <Text style={{width: 50, textAlign: 'center', color: '#90EE90'}}>. . .</Text>
+                <Text style={{width: 50, textAlign: 'center', color: 'white'}}>. . .</Text>
               </View>
-              <View style={{flex: 1, height: 1, backgroundColor: '#90EE90'}} />
+              <View style={{flex: 1, height: 1, backgroundColor: 'white'}} />
             </View>
             <Text style={styles.paragraph}>
               In a world plagued by disconnect, there is no greater unifier than the simple act of travel.

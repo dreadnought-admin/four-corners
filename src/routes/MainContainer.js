@@ -12,7 +12,7 @@ import Map from "../components/Map";
 // screen names 
 const welcomeName = "Welcome";
 const mainName = "Main";
-const aboutName = "About";
+const aboutName = "Info";
 const countryName = "Countries";
 const map = "Map";
 
@@ -33,19 +33,21 @@ export default function MainContainer() {
                     } else if (rn === mainName) {
                         iconName = focused ? 'star' : 'star';
                     } else if (rn === aboutName) {
-                        iconName = focused ? 'dashboard' : 'dashboard';
+                        iconName = focused ? 'info' : 'info';
                     } else if (rn === countryName) {
                         iconName = focused ? 'globe' : 'globe';
                     }
 
                     return <Icon name={iconName} size={size} color={color}/>
+                    
                 }
             })}>
 
-            <Tab.Screen name={welcomeName} component={Welcome}/>
-            <Tab.Screen name={mainName} component={Main}/>
-            <Tab.Screen name={aboutName} component={About}/>
-            <Tab.Screen name={countryName} component={Countries}/>
+            <Tab.Screen name={welcomeName} component={Welcome} options={{ headerShown: false }}/>
+            <Tab.Screen name={mainName} component={Main} options={{ headerShown: false }}/>
+            <Tab.Screen name={countryName} component={Countries} options={{ headerShown: false }}/>
+            <Tab.Screen name={aboutName} component={About} options={{ headerShown: false }}/>
+            
 
             </Tab.Navigator>
         </NavigationContainer>

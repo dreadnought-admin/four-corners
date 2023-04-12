@@ -30,7 +30,7 @@ const pressHandler = () => {
   
       <View style={styles.headerContainer}>
         <Text style={styles.headerText}>Where You're Going</Text>
-        <Icon name="plane" size={20} color="whitesmoke"></Icon>
+        <Icon style={styles.headerText} name="plane" size={20} color="whitesmoke"></Icon>
       </View>
     
       <View style={styles.countryContainer}>
@@ -64,7 +64,7 @@ const pressHandler = () => {
 
       <View style={styles.headerContainer}>
         <Text style={styles.headerText}>Where You've Been</Text>
-        <Icon name="flag" size={20} color="whitesmoke"></Icon>
+        <Icon style={styles.headerText} name="flag" size={20} color="whitesmoke"></Icon>
       </View>
 
       <View style={styles.countryContainer}>
@@ -131,9 +131,10 @@ const styles = StyleSheet.create({
   headerContainer: {
     marginTop: 15,
     padding: 15,
-    backgroundColor: "#556B2F",
+    backgroundColor: "cornflowerblue",
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row'
   },
   headerText: {
     color: "white",
@@ -142,7 +143,10 @@ const styles = StyleSheet.create({
     textShadowColor: "black",
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 10,
-    marginBottom: 1
+    marginBottom: 1,
+    fontSize: 30,
+    flexDirection: 'row',
+    marginRight: 25
   },
   img: {
     height: 35,
