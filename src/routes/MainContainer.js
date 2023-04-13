@@ -2,17 +2,20 @@
 import * as React from "react"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import Main from "../components/Main";
 import About from "../components/About";
-import CountryList from '../components/CountryList';
+import Countries from '../components/CountryList';
 import Welcome from '../components/Welcome';
+import Map from "../components/Map";
 
 // screen names 
-const welcomeName = "Welcome"
+const welcomeName = "Welcome";
 const mainName = "Main";
-const aboutName = "About";
-const countryName = "CountryList"
+const aboutName = "Info";
+const countryName = "Countries";
+const countryDetailsName = "Details";
+const map = "Map";
 
 const Tab = createBottomTabNavigator();
 
@@ -27,23 +30,25 @@ export default function MainContainer() {
                     let rn = route.name
 
                     if (rn === welcomeName) {
-                        iconName = focused ? 'home' : 'home-outline';
+                        iconName = focused ? 'home' : 'home';
                     } else if (rn === mainName) {
-                        iconName = focused ? 'home' : 'home-outline';
+                        iconName = focused ? 'star' : 'star';
                     } else if (rn === aboutName) {
-                        iconName = focused ? 'settings' : 'settings-outline';
+                        iconName = focused ? 'info' : 'info';
                     } else if (rn === countryName) {
-                        iconName = focused ? 'home' : 'home-outline';
+                        iconName = focused ? 'globe' : 'globe';
                     }
 
-                    return <Ionicons name={iconName} size={size} color={color}/>
+                    return <Icon name={iconName} size={size} color={color}/>
+                    
                 }
             })}>
 
-            <Tab.Screen name={welcomeName} component={Welcome}/>
-            <Tab.Screen name={mainName} component={Main}/>
-            <Tab.Screen name={aboutName} component={About}/>
-            <Tab.Screen name={countryName} component={CountryList}/>
+            <Tab.Screen name={welcomeName} component={Welcome} options={{ headerShown: false }}/>
+            <Tab.Screen name={mainName} component={Main} options={{ headerShown: false }}/>
+            <Tab.Screen name={countryName} component={Countries} options={{ headerShown: false }}/>
+            <Tab.Screen name={aboutName} component={About} options={{ headerShown: false }}/>
+            
 
             </Tab.Navigator>
         </NavigationContainer>
