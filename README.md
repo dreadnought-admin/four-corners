@@ -6,7 +6,7 @@ Browse through a list of countries, show your interest in them, and navigate an 
 To run:
 
 1. Visit the live demo here! => 
-2. ?
-3. ?
-4. ?
+2. Marvel!
+3. Awe!
+4. Maybe a snack?
 5. Take care and thanks for stopping by!
