@@ -159,6 +159,8 @@ const styles = StyleSheet.create({
     paddingBottom: 3,
   },
   countryContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 10,
     flexDirection: 'row',
     flexWrap: 'wrap'

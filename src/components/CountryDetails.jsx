@@ -80,7 +80,7 @@ const CountryDetails = ({ item }) => {
     },
     countryContainer: {
       flexDirection: 'row',
-      width: 215,
+      width: 205,
       height: 140,
       marginLeft: 10,
       marginTop: 25

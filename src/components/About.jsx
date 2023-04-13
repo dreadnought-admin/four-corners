@@ -4,7 +4,6 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import globe from '../assets/removedglobe.png'
 import plane from '../assets/planegif.gif'
 
-import Map from './Map';
 
 
 const About = () => {
@@ -50,7 +49,6 @@ const About = () => {
             </Text>
           </View>
           <View>
-            {/* <Map /> */}
           </View>
         </View>
         </ImageBackground>
