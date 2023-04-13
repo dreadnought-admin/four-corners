@@ -14,6 +14,7 @@ const welcomeName = "Welcome";
 const mainName = "Main";
 const aboutName = "Info";
 const countryName = "Countries";
+const countryDetailsName = "Details";
 const map = "Map";
 
 const Tab = createBottomTabNavigator();

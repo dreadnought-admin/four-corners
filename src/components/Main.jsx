@@ -152,8 +152,11 @@ const styles = StyleSheet.create({
     height: 35,
     width: 50,
     alignSelf: 'center',
-    marginBottom: 10,
-    marginRight: 15,
+    marginBottom: 20,
+    marginRight: 30,
+    paddingHorizontal: 15,
+    paddingRight: 3,
+    paddingBottom: 3,
   },
   countryContainer: {
     marginTop: 10,

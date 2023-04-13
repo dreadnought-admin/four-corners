@@ -1,18 +1,14 @@
 import React, { useState, useContext } from 'react'
 import { View, Text, Button, FlatList, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native'
 import { DataContext } from '../global/DataContext';
-import Collapsible from 'react-native-collapsible';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
+
+import  CountryDetails  from './CountryDetails';
 
 
 const CountryList = ({ navigation }) => {
 
   const [search, setSearch] = useState("")
-  const [collapsed, setCollapsed] = useState(true);
-
-  const toggleExpanded = () => {
-    //Toggling the state of single Collapsible
-    setCollapsed(!collapsed);
-  };
 
     const {appData, setData, liked, setLiked, wantToGo, beenHere, setWantToGo, setBeenHere,
       filteredData, setFilteredData} = useContext(DataContext);
@@ -42,10 +38,6 @@ const CountryList = ({ navigation }) => {
         setSearch(text);
       }
     }
-
-    const handleBeenHere = () => setBeenHere(beenHere + 1)
-
-    const handleWantToGo = () => setWantToGo(wantToGo + 1)
 
 
       const ItemView = ({item}) => {
@@ -84,19 +76,19 @@ const CountryList = ({ navigation }) => {
     
     return (
       <View>
-      <View style={styles.browseCountries}>
-        <Text style={styles.headerText}>Where Will You Go? 🗺️</Text>
-      </View>
       <TextInput
         style={styles.input}
         value={search}
-        placeholder="Search for a new destination"
+        placeholder="🔎 Search for a new destination"
         underlineColorAndroid="transparent"
         onChangeText={(text) => searchFilter(text)}
       />
+      <View style={styles.browseCountries}>
+        <Text style={styles.headerText}>Where Will You Go? 🗺️</Text>
+      </View>
         <FlatList 
         data={filteredData}
-        renderItem={ItemView}
+        renderItem={({item}) => <CountryDetails item={item} />}
         keyExtractor={(item, index) => index.toString()}
         ItemSeparatorComponent={myItemSeparator}
         />
@@ -115,9 +107,9 @@ const CountryList = ({ navigation }) => {
     },
     browseCountries: {
       fontFamily: 'Helvetica',
-      marginBottom: 15,
+      marginBottom: 35,
       alignItems: 'center',
-      marginTop: 15,
+      marginTop: 1,
     },
     content: {
       padding: 20,
@@ -151,7 +143,9 @@ const CountryList = ({ navigation }) => {
       borderWidth: 1,
       paddingLeft: 20,
       margin: 5,
-      borderColor: "#009688",
+      fontSize: 15,
+      borderColor: "cornflowerblue",
+      borderRadius: 100 / 2,
       backgroundColor: "lightgrey",
       marginBottom: 25,
     }
