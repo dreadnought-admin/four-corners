@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react'
 import { View, Text, Image, StyleSheet, Linking, TouchableOpacity, ImageBackground, Animated, Easing } from 'react-native';
-import Main from './Main';
 import tripadvisor from '../assets/tripadvisor.png'
 import background from '../assets/cartoonbg.jpg'
 
@@ -95,16 +94,6 @@ const styles = StyleSheet.create({
       textShadowColor: "black",
       textShadowOffset: {width: -1, height: 1},
       textShadowRadius: 5,
-    },
-    h2: {
-      // alignItems: "center",
-      // justifyContent: "center",
-      // fontFamily: 'Helvetica',
-      // fontSize: 25,
-      // color: "#FFF",
-      // textShadowColor: "black",
-      // textShadowOffset: {width: -1, height: 1},
-      // textShadowRadius: 5,
     },
     h3: {
       fontSize: 15,

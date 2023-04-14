@@ -5,15 +5,12 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import Banner from './Banner';
 import profile from '../assets/profilepic.gif'
 
+import CountryDetails from './CountryDetails';
+
 
 const Main = ({ navigation }) => {
 
   const { appData } = useContext(DataContext);
-
-const pressHandler = () => {
-    alert("Clicked")
-}
-
 
   return (
     <ScrollView>
@@ -112,7 +109,6 @@ const pressHandler = () => {
 
         <Image style={styles.img} source={{uri: `${appData[27].flags.png}`}}></Image>
       </View>
-    
     </View>
     </ScrollView>
   )
@@ -153,9 +149,8 @@ const styles = StyleSheet.create({
     width: 50,
     alignSelf: 'center',
     marginBottom: 20,
-    marginRight: 30,
+    marginHorizontal: 10,
     paddingHorizontal: 15,
-    paddingRight: 3,
     paddingBottom: 3,
   },
   countryContainer: {

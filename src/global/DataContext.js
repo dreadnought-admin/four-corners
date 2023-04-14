@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState, useEffect } from "react";
 
 
@@ -13,7 +14,7 @@ const DataProvider = ({children}) => {
 
     const [liked, setLiked] = useState([]);
 
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState([]);
 
 
     const url = 'https://restcountries.com/v3.1/all';
@@ -43,7 +44,20 @@ const DataProvider = ({children}) => {
     fetchJsonPlaceholder();
   }, []);
 
+//   useEffect(() => {
+//     setFavorites(appData);
+//   }, [favorites]);
 
+//   useEffect(() => {
+//     console.log(favorites);
+//   }, [favorites]);
+
+//   const handleFavorite = (name) => {
+//     const newFavorites = favorites.map(item => {
+//         return item.name.common = name ? { ... item, favorite: !item.favorite } : item; 
+//     });
+//     setFavorites(newFavorites)
+//   }
 
     return(
         <DataContext.Provider value={{

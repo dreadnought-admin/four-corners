@@ -40,7 +40,7 @@ const About = () => {
               In a world plagued by disconnect, there is no greater unifier than the simple act of travel.
             </Text>
             <Text style={styles.paragraph}>
-              Honeysuckle LLC is proud to partner with TripAdvisor © to bring you Four Corners, an app designed
+              Fellow Traveler LLC is proud to partner with TripAdvisor © to bring you Four Corners, an app designed
               to make planning your next journey as easy as daydreaming about it.
             </Text>
             <Text style={styles.paragraph}>

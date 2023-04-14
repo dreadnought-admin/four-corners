@@ -10,10 +10,7 @@ const CountryList = ({ navigation }) => {
 
   const [search, setSearch] = useState("")
 
-    const {appData, setData, liked, setLiked, wantToGo, beenHere, setWantToGo, setBeenHere,
-      filteredData, setFilteredData} = useContext(DataContext);
-
-
+    const {appData, wantToGo, beenHere, filteredData, setFilteredData} = useContext(DataContext);
 
     const myItemSeparator = () => {
         return (
@@ -37,7 +34,7 @@ const CountryList = ({ navigation }) => {
         setFilteredData(appData)
         setSearch(text);
       }
-    }
+    };
 
 
       const ItemView = ({item}) => {
@@ -62,7 +59,6 @@ const CountryList = ({ navigation }) => {
             Population: {item.population}
           </Text>
           <View style={styles.btn}>
-            {/* <Button color="lightgreen" title="Maps" onPress={() => {<Map item={item}/>}}></Button> */}
             <Button color="lightgreen" title={`${wantToGo} want to go`} onPress={handleWantToGo}></Button>
           </View>
           <View style={styles.btn}>

@@ -1,43 +1,41 @@
 import React, { useEffect, useState, useContext }from 'react';
-import { Text, Image, View, ScrollView, Button, StyleSheet, Linking } from 'react-native';
+import { Text, Image, View, Button, StyleSheet, Linking, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import { DataContext } from '../global/DataContext';
 
 const CountryDetails = ({ item }) => {
 
     
     const [wantToGo, setWantToGo] = useState(0);
-    const [beenHere, setBeenHere] = useState(0);
-
-    const { appData } = useContext(DataContext)
-
-    const handleLikeClick = () => {
-        setWantToGo((wantToGo) => wantToGo + 1);
-      }
-
-    const handleBeenHereClick = () => {
-    setBeenHere((beenHere) => beenHere + 1);
-    }
-
+    // const [beenHere, setBeenHere] = useState(0);
+    const [isLiked, setLiked] = useState(false);
     const [isSolo, setSolo] = useState()
 
-    const wantsToGoSolo = () => {
-        if (wantToGo === 1) {
-            return true
-        } else {
-            return false
-        }
-    }
+    const handleWantClick = () => {
+        setWantToGo((wantToGo) => wantToGo + 1);
+      };
+
+    // const handleBeenHereClick = () => {
+    // setBeenHere((beenHere) => beenHere + 1);
+    // }
+
+    const handleLikeClick = () => {
+      setLiked((!isLiked))
+    };
 
     const solo = () => {
         if (wantToGo === 1) {
             setSolo(false)
         } else if (wantToGo > 1) {
             setSolo(true) 
-        }}
+        } else if (wantToGo === 0) {
+          setSolo(false)
+        }
+      };
 
     useEffect(() => {
         solo(wantToGo);
-    })
+    });
 
     return(
         <View style={styles.container}>
@@ -47,9 +45,11 @@ const CountryDetails = ({ item }) => {
           </Image>
         </View>
         <View style={styles.infoContainer}>
-        <Text style={styles.infoText}>
-        {item.name.common.toUpperCase()}
+        <View style={styles.commonName}>
+          <Text style={styles.infoText}>
+          {item.name.common.toUpperCase()}
           </Text>
+        </View>
           <Text style={{fontSize: 10}}>
           📍 {item.name.official}
           </Text>
@@ -64,7 +64,10 @@ const CountryDetails = ({ item }) => {
           </Text>
           <View style={styles.spacer}>
             <Button color="cornflowerblue" title={`Discover ${item.name.common} 🧭`} onPress={() => Linking.openURL(`https://www.countryreports.org/country/${item.name.common}.htm`)}></Button>
-            <Button color="cornflowerblue" title={isSolo? `${wantToGo} want to go 🛩️` : `${wantToGo} wants to go 🛩️`} onPress={handleLikeClick}></Button>
+            <Button color="cornflowerblue" title={isSolo? `${wantToGo} want to go 🛩️` : `${wantToGo} wants to go 🛩️`} onPress={handleWantClick}></Button>
+            <TouchableOpacity style={styles.like} onPress={handleLikeClick}>
+              {isLiked ? <Icon name="heart" size={20} color="hotpink"></Icon> : <Icon name="heart" size={20} color="lightgrey"></Icon>}
+            </TouchableOpacity>
           </View>
         </View>
         </View>
@@ -76,7 +79,8 @@ const CountryDetails = ({ item }) => {
     container: {
       padding: 0,
       flex: 1,
-      flexDirection: 'row'
+      flexDirection: 'row',
+      height: 240
     },
     countryContainer: {
       flexDirection: 'row',
@@ -92,9 +96,13 @@ const CountryDetails = ({ item }) => {
         width: 175,
         height: 200,
         paddingVertical: 5,
+        marginTop: 15,
         marginBottom: 5,
         marginLeft: 0,
         marginRight: 5
+    },
+    commonName: {
+      fontWeight: "bold",
     },
     browseCountries: {
       fontFamily: 'Helvetica',
@@ -122,7 +130,7 @@ const CountryDetails = ({ item }) => {
     },
     img: {
     width: 200,
-    height: 150
+    height: 165
     },
     btn: {
     flex: 1,
@@ -147,7 +155,16 @@ const CountryDetails = ({ item }) => {
         
     },
     infoText: {
-        textAlign: 'center'
+        marginTop: 10,
+        paddingBottom: 5,
+        textAlign: 'center',
+        fontWeight: 'bold'
+    },
+    like: {
+      marginTop: 5,
+      marginBottom: 1,
+      justifyContent: 'center',
+      alignItems: 'center'
     }
   });
 

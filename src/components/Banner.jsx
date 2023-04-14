@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import { StyleSheet, View, Text, Button, Image, Dimensions } from 'react-native'
-import { DataContext } from '../global/DataContext'
+// import { DataContext } from '../global/DataContext'
 
 const Banner = () => {
 
-  const {user, setUser} = useContext(DataContext);
-
+  // const {user, setUser} = useContext(DataContext);
 
   return (
     <View style={styles.container}>
